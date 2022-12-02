@@ -69,3 +69,13 @@ main {
 .hidden {
     display: none;
 }
+
+.participant {
+    text-align: center;
+    cursor: pointer;
+}
+
+.workshops-container {
+    text-align: center;
+    border: solid 5px black;
+}

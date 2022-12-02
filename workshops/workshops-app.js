@@ -1,6 +1,6 @@
 // IMPORT
 
-import { getWorkshops, signOutUser } from '../fetch-utils.js';
+import { deleteParticipant, getWorkshops, signOutUser } from '../fetch-utils.js';
 import { renderWorkshop } from '../render-utils.js';
 
 
@@ -36,7 +36,8 @@ async function displayWorkshops() {
         for (let participant of workshop.participants) {
             const participantEl = document.createElement('div');
             participantEl.addEventListener('click', async () => {
-                console.log('clicked!');
+                await deleteParticipant(participant.id);
+                displayWorkshops();
             });
             participantEl.classList.add('participant');
             participantEl.textContent = participant.name;
