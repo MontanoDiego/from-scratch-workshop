@@ -26,4 +26,38 @@ export async function signOutUser() {
     return await client.auth.signOut();
 }
 
-/* Data functions */
+
+export async function checkAuth() {
+    const user = getUser();
+
+    if (!user) location.replace('../auth');
+}
+
+export async function redirectIfLoggedIn() {
+    if (getUser()) {
+        location.replace('./workshops');
+    }
+}
+
+// Data Functions
+
+export async function getWorkshops() {
+    const response = await client
+        .from('workshops')
+        .select('*, participants(*)');
+
+    return checkError(response);
+}
+
+
+
+// check error
+
+function checkError({ data, error }) {
+    return error ? console.error(error) : data;
+}
+
+
+// test logs
+
+console.log('response', getWorkshops());
