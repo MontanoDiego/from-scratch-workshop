@@ -8,7 +8,7 @@ import { renderWorkshop } from '../render-utils.js';
 // DOM
 
 const signOut = document.getElementById('sign-out-link');
-const workshopsEl = document.getElementById('workshops-container');
+const workshopsEl = document.querySelector('.workshops-container');
 
 // EVENTS
 
@@ -16,6 +16,11 @@ signOut.addEventListener('click', async () => {
     await signOutUser();
 });
 
+window.addEventListener('load', async () => {
+    const workshops = await getWorkshops();
+
+    displayWorkshops(workshops);
+});
 
 // display functions 
 
