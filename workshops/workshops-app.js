@@ -1,6 +1,6 @@
 // IMPORT
 
-import { deleteParticipant, getWorkshops, signOutUser } from '../fetch-utils.js';
+import { checkAuth, deleteParticipant, getWorkshops, signOutUser } from '../fetch-utils.js';
 import { renderWorkshop } from '../render-utils.js';
 
 
@@ -11,6 +11,8 @@ const signOut = document.getElementById('sign-out-link');
 const workshopsEl = document.querySelector('.workshops-container');
 
 // EVENTS
+
+checkAuth();
 
 signOut.addEventListener('click', async () => {
     await signOutUser();
