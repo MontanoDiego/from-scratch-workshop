@@ -13,7 +13,7 @@
 
     <!-- js -->
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"></script>
-    <script type="module" src="app.js"></script>
+    <script type="module" src="create-app.js"></script>
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +24,7 @@
 
     <!-- css -->
     <link rel="stylesheet" href="/styles/reset.css" />
-    <link rel="stylesheet" href="/styles/global.css" />
+    <link rel="stylesheet" href="/create/create-style.css" />
     <!-- add link for page specific css -->
 
 </head>
@@ -32,17 +32,29 @@
 <body>
     <header class="page-header">
         <img class="logo" src="/assets/html_css_js.png" alt="logo">
-        <p class="title">Home</p>
+        <p class="title">Add a participant</p>
         <nav>
-            <a href="/">Home</a>
-            <a id="sign-out-link" href="auth">Sign Out</a>
+            <a href="../workshops/">Workshops</a>
+            <a id="sign-out-link" href="../auth/">Sign Out</a>
         </nav>
     </header>
 
     <main>
+        <form class="participant-form" id="participant-form">
+            <label>
+                Add a Participant!
+                <input type="text" name="participant-name" placeholder="Enter participant name!">
+            </label>
+            <label>
+                Enroll in
+                <select id="workshop-selector" name="workshop-id">
 
+                </select>
+            </label>
+            <button>Add</button>
+        </form>
     </main>
-
+    <script type="module" src="./create-app.js"></script>
 </body>
 
 </html>

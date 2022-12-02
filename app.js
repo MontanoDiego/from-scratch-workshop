@@ -8,4 +8,8 @@ import './auth/user.js';
 
 /* Events */
 
+window.addEventListener('load', () => {
+    location.replace('/auth');
+});
+
 /* Display Functions */
